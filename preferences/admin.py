@@ -9,6 +9,11 @@ csrf_protect_m = method_decorator(csrf_protect)
 
 class PreferencesAdmin(admin.ModelAdmin):
 
+    def has_add_permission(self, request, obj=None):
+        return False
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     @csrf_protect_m
     def changelist_view(self, request, extra_context=None):
         """
