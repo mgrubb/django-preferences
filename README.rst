@@ -11,12 +11,13 @@ Django Preferences
 .. image:: https://badge.fury.io/py/django-preferences.svg
     :target: https://badge.fury.io/py/django-preferences
 
-Provides singleton admin views for Preferences objects and a simple interface to preference values.
-Singleton views ensure only one preference instance per site is available for each ``Preferences`` class.
-
 ..
 
-    **Requires** and supports `Django's "sites" framework <https://docs.djangoproject.com/en/dev/ref/contrib/sites/>`_, which means you can have multiple preferences, each associated with a particular site.
+   **NOTE:** This is not my own work, this was forked from praekelt/django-preferences. I simply did not
+   need the Site support so I ripped it out to fit my own needs.
+
+Provides singleton admin views for Preferences objects and a simple interface to preference values.
+Singleton views ensure only one preference instance is available for each ``Preferences`` class.
 
 .. contents:: Contents
     :depth: 5
@@ -28,17 +29,12 @@ Requirements
 
 #. Django 1.11, 2.0, 2.1
 
-#. django.contrib.sites
-
-
 Installation
 ------------
 
 #. Install or add ``django-preferences`` to your Python path.
 
 #. Add ``preferences`` to your ``INSTALLED APPS`` setting.
-
-#. Add ``django.contrib.sites`` to your ``INSTALLED APPS`` setting. django-preferences associates preferences to specific sites and thus requires Django's "sites" framework to be installed.
 
 #. Optionally, add ``preferences.context_processors.preferences_cp`` to your template option settings. This will automatically add a ``preferences`` variable to your template context::
 
